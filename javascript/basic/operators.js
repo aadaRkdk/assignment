@@ -11,7 +11,6 @@ const b = '10'
 console.log(a===b);
 
 //q3. generate a random number between 0 and 5, if it is lesser than 3, console.log "lesser than 3" else "Greater"
-
 const num = Math.floor(Math.random()*6);
 console.log("Generated number = " + num);
 if(num<3){
