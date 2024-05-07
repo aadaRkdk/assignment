@@ -1,5 +1,5 @@
 /* 
-This calculator is made to practise different concepts while learning. It may not be fully functional.I
+This calculator is made to practise different concepts while learning. It is not be fully functional. It is not complete and has many exceptions.I
 */
 "use client";
 import { useState } from "react";
