@@ -23,6 +23,13 @@ function VisitPage() {
             </button>
           </a>
         </li>
+        <li>
+          <a href="/box">
+            <button className="">
+              <u>/reduxBoxComponent</u>
+            </button>
+          </a>
+        </li>
       </ul>
     </>
   );
