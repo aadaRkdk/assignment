@@ -2,7 +2,7 @@ function VisitPage() {
   return (
     <>
       <ul className="text-2xl">
-      <li>
+        <li>
           <a href="/register">
             <button className="">
               <u>/register</u>
@@ -27,6 +27,13 @@ function VisitPage() {
           <a href="/box">
             <button className="">
               <u>/reduxBoxComponent</u>
+            </button>
+          </a>
+        </li>
+        <li>
+          <a href="/eventHandle">
+            <button className="">
+              <u>/eventHandle</u>
             </button>
           </a>
         </li>

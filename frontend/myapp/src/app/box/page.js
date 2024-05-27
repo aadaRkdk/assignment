@@ -11,9 +11,19 @@ import {
 } from "@/redux/reducerSlices/boxSlice";
 
 const BoxComponent = () => {
-  const { width, height, backGroundColor, borderRadius} = useSelector((state) => state.box);
+  const { width, height, backGroundColor, borderRadius } = useSelector(
+    (state) => state.box
+  );
 
   const dispatch = useDispatch();
+
+  const generateArea = () => {
+    if (borderRadius === "50%") {
+      return Math.PI * (width / 2) ** 2;
+    } else {
+      return width * height;
+    }
+  };
 
   return (
     <>
@@ -23,17 +33,25 @@ const BoxComponent = () => {
             width: width,
             height: height,
             backgroundColor: backGroundColor,
-            borderRadius: borderRadius
+            borderRadius: borderRadius,
           }}
         ></div>
       </main>
-      <div className="flex justify-normal pt-4">
+      {generateArea()}
+      <div className="flex justify-center flex-col p-10">
         <Button onClick={() => dispatch(increaseWidth())}>+Width</Button>
         <Button onClick={() => dispatch(increaseHeight())}>+Height</Button>
         <Button onClick={() => dispatch(changeShape())}>
           Change to circle
         </Button>
-        <Input onChange={(x)=> dispatch(changeColor(x.target.value))} placeholder="Enter color" />
+        <Input
+          onChange={(x) => dispatch(changeColor(x.target.value))}
+          placeholder="Enter color"
+        />
+        <Button>Shift-Right</Button>
+        <Button>Shift-Left</Button>
+        <Button>Shift-Top</Button>
+        <Button>Shift-Button</Button>
       </div>
     </>
   );
