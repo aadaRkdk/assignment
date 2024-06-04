@@ -1,69 +1,89 @@
-/*
-  Register page using static React component.
-*/
+import Link from "next/link";
 
-export default function RegisterPage() {
+const RegisterPage = () => {
   return (
     <main>
+      <div className="p-4 text-2xl"></div>
+
       <div className="flex min-h-screen flex-col items-center justify-between p-2">
         <form>
-          <div>
-            <h1 className="text-2xl font-bold">Register</h1>
-            <p>Please fill in this form to create an account.</p>
-            <label>
+          <div className="container mx-auto max-w-md p-4">
+            <h1 className="text-2xl font-bold mb-2">Register</h1>
+            <p className="mb-4">
+              Please fill in this form to create an account.
+            </p>
+            <hr className="mb-4" />
+
+            <label htmlFor="name" className="block mb-1">
               <b>Full Name</b>
             </label>
             <input
               type="text"
               placeholder="Enter Your Full Name"
-              className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+              name="fullname"
+              id="fullname"
               required
+              className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
             />
-            <label>
+
+            <label htmlFor="email" className="block mb-1">
               <b>Email</b>
             </label>
             <input
               type="text"
               placeholder="Enter Email"
-              className="w-full px-4 py-2 mb-4 border border-gray-300 focus:outline-none focus:border-blue-500"
+              name="email"
+              id="email"
               required
+              className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
             />
-            <label>
+
+            <label htmlFor="psw" className="block mb-1">
               <b>Password</b>
             </label>
             <input
-              type="text"
+              type="password"
               placeholder="Enter Password"
-              className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500"
+              name="psw"
+              id="psw"
               required
+              className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
             />
-            <label>
+
+            <label htmlFor="psw-repeat" className="block mb-1">
               <b>Repeat Password</b>
             </label>
             <input
-              type="text"
+              type="password"
               placeholder="Repeat Password"
-              className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:border-blue-500"
+              name="psw-repeat"
+              id="psw-repeat"
               required
+              className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
             />
-            <hr />
-            <p>
-              By creating an account you agree to our{"  "}
+            <hr className="mb-4" />
+
+            <p className="mb-4">
+              By creating an account you agree to our{" "}
               <a href="#" className="text-blue-500">
-                Terms and Privacy
+                Terms & Privacy
               </a>
               .
             </p>
-            <button className="w-full px-4 py-2 bg-blue-500 text-white rounded-md focus:outline-none hover:bg-blue-600">
+            <button
+              type="submit"
+              className="w-full px-4 py-2 bg-blue-500 text-white rounded-md focus:outline-none hover:bg-blue-600"
+            >
               Register
             </button>
           </div>
-          <div>
-            <p>
+
+          <div className="container mx-auto max-w-md p-4">
+            <p className="mb-4">
               Already have an account?{" "}
-              <a href="/login" className="text-blue-500">
+              <Link href="/login" className="text-blue-500">
                 Sign in
-              </a>
+              </Link>
               .
             </p>
           </div>
@@ -71,4 +91,6 @@ export default function RegisterPage() {
       </div>
     </main>
   );
-}
+};
+
+export default RegisterPage;
