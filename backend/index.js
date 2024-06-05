@@ -44,7 +44,6 @@ const User = mongoose.model("User", userSchema);
 app.post("/register", async (req, res) => {
   // Hash the password securely using bcrypt
   const hashPasswd = await bcrypt.hash(req.body.password, saltRounds);
-
   // Check if a user with the same email already exists
   const userExist = await User.exists({ email: req.body.email });
   if (userExist) {
