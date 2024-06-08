@@ -20,8 +20,8 @@ const RegisterPage = () => {
             <input
               type="text"
               placeholder="Enter Your Full Name"
-              name="fullname"
-              id="fullname"
+              name="fullName"
+              id="fullName"
               required
               className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
             />
@@ -94,3 +94,17 @@ const RegisterPage = () => {
 };
 
 export default RegisterPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
