@@ -1,6 +1,22 @@
 /*
-  Login page using static React component.
-*/
+ * Login page using static React component.
+ * This code defines a simple login page with a form for users to log into their account.
+ * It includes fields for email and password, with basic styling using Tailwind CSS.
+ * Next.js's Link component is used for client-side navigation to the registration page.
+ *
+ * Concepts used:
+ * - React functional components
+ * - JSX syntax for defining UI elements
+ * - Next.js Link component for client-side navigation
+ * - Tailwind CSS for styling
+ * - Basic form structure and input handling
+ *
+ * Suggested Improvements:
+ * - Implement form validation for better user experience and data integrity.
+ * - Add state management using React's useState hook to handle form inputs and submission.
+ * - Implement error handling and display feedback messages to users.
+ * - Use environment variables for sensitive data and configurations.
+ */
 
 import Link from "next/link";
 
