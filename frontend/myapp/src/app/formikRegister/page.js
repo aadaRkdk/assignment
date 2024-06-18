@@ -1,12 +1,47 @@
+/*
+  RegisterPage Component
+
+  Description:
+  This component renders a registration form using various modern libraries and tools. 
+  It demonstrates the use of React functional components, form handling with Formik, animations
+  with Framer Motion, and styling with Tailwind CSS. The form captures user details such as
+  full name, email, password, and repeat password and validates them before submission.
+
+  Languages and Tools Used:
+  - JavaScript (with JSX syntax for React components)
+  - CSS (using Tailwind CSS for styling)
+  - React (for building the UI)
+  - Formik (for managing form state and validation)
+  - Framer Motion (for adding animations)
+  - Next.js (for client-side routing with the Link component)
+  - NextUI (for pre-styled UI components like Button)
+
+  Logic and Concepts:
+  - React Functional Components: Used to define the RegisterPage component.
+  - useFormik Hook: Manages the form state and handles form submission.
+  - Framer Motion: Adds animations to form fields and buttons for better user experience.
+  - Tailwind CSS: Provides utility-first CSS classes for styling the components.
+  - Client-side Navigation: Implemented with Next.js Link component for seamless page transitions.
+
+  Suggestions for Improvement:
+  - Implement proper validation for email and password fields.
+  - Enhance the user experience by adding more interactive elements or tooltips.
+  - Store form submission data in a database or state management library for better persistence.
+  - Improve accessibility by adding ARIA labels and roles.
+  - Add error handling and feedback for users on form submission.
+*/
+
 "use client";
 
 import React from "react";
 import Link from "next/link";
 import { useFormik } from "formik";
-import { Input, Button } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { motion } from "framer-motion";
 
+// RegisterPage component using useFormik for form state management and framer-motion for animations
 const RegisterPage = () => {
+  // useFormik hook to manage form state and handle form submission
   const formik = useFormik({
     initialValues: {
       fullName: "",
@@ -15,33 +50,17 @@ const RegisterPage = () => {
       repeatPassword: "",
     },
     onSubmit: (values) => {
-      // alert(JSON.stringify(values, null, 2));
-      // console.log(values);
-      registerUser(values);
+      // Handle form submission, alert and log form values
+      alert(JSON.stringify(values, null, 2));
+      console.log(values);
     },
   });
-
-  const registerUser = (values) => {
-    fetch("http://localhost:3000/register", {
-      method: "POST", // Specify the HTTP method
-      headers: {
-        "Content-Type": "application/json", // Assuming JSON data is being sent
-        // Add any other headers as needed
-      },
-      body: JSON.stringify(values), // Convert the values object to JSON string and send it as the request body
-    });
-    // .then(response => {
-    //     // Handle the response here
-    // })
-    // .catch(error => {
-    //     // Handle any errors that occur during the fetch operation
-    // });
-  };
 
   return (
     <main className="bg-gray-100 min-h-screen flex items-center justify-center">
       <div className="p-4 text-2xl"></div>
       <div className="w-full max-w-lg mx-auto bg-white shadow-md rounded-lg p-6">
+        {/* Animation wrapper for form using framer-motion */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -58,6 +77,7 @@ const RegisterPage = () => {
               <hr className="mb-4" />
             </div>
 
+            {/* Full Name Input Field */}
             <div className="mb-1">
               <label
                 htmlFor="fullName"
@@ -65,6 +85,7 @@ const RegisterPage = () => {
               >
                 Full Name
               </label>
+              {/* Animated input field using framer-motion */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -81,6 +102,7 @@ const RegisterPage = () => {
               </motion.div>
             </div>
 
+            {/* Email Input Field */}
             <div className="mb-1">
               <label
                 htmlFor="email"
@@ -88,6 +110,7 @@ const RegisterPage = () => {
               >
                 Email
               </label>
+              {/* Animated input field using framer-motion */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -105,6 +128,7 @@ const RegisterPage = () => {
               </motion.div>
             </div>
 
+            {/* Password Input Field */}
             <div className="mb-1">
               <label
                 htmlFor="password"
@@ -112,6 +136,7 @@ const RegisterPage = () => {
               >
                 Password
               </label>
+              {/* Animated input field using framer-motion */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -129,6 +154,7 @@ const RegisterPage = () => {
               </motion.div>
             </div>
 
+            {/* Repeat Password Input Field */}
             <div className="mb-1">
               <label
                 htmlFor="repeatPassword"
@@ -136,6 +162,7 @@ const RegisterPage = () => {
               >
                 Repeat Password
               </label>
+              {/* Animated input field using framer-motion */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -163,6 +190,7 @@ const RegisterPage = () => {
               </p>
             </div>
 
+            {/* Animated submit button using framer-motion */}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 type="submit"

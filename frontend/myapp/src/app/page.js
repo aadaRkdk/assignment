@@ -21,6 +21,13 @@ function VisitPage() {
     <>
       <ul className="text-2xl">
         <li>
+          <a href="/calculator">
+            <button className="">
+              <u>/calculator</u>
+            </button>
+          </a>
+        </li>
+        <li>
           <a href="/register">
             <button className="">
               <u>/register</u>
@@ -35,9 +42,9 @@ function VisitPage() {
           </a>
         </li>
         <li>
-          <a href="/calculator">
+          <a href="/propsDrilling">
             <button className="">
-              <u>/calculator</u>
+              <u>/propsDrilling-Page</u>
             </button>
           </a>
         </li>
