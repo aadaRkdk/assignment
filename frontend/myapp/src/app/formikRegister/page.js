@@ -55,7 +55,7 @@ const RegisterPage = () => {
       console.log(values);
     },
   });
-
+// console.log(formik); //to see formik
   return (
     <main className="bg-gray-100 min-h-screen flex items-center justify-center">
       <div className="p-4 text-2xl"></div>

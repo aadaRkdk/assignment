@@ -83,6 +83,13 @@ function VisitPage() {
             </button>
           </a>
         </li>
+        <li>
+          <a href="/dynamicRoute">
+            <button className="">
+              <u>/dynamicRoute</u>
+            </button>
+          </a>
+        </li>
       </ul>
     </>
   );
